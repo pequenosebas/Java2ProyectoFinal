@@ -14,6 +14,15 @@ public class Usuario {
     private String login;
     private String pass;
 
+    public Usuario() {
+    }
+
+    public Usuario(String login, String pass) {
+        this.login = login;
+        this.pass = pass;
+    }
+    
+    
     public String getLogin() {
         return login;
     }

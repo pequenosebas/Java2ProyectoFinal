@@ -16,8 +16,6 @@ public UsuarioNoValidoException(){
     super("LOS DATOS INGRESADOS NO SON CORRECTOS");
     
 }
-  
-    
-    
+   
     
 }
