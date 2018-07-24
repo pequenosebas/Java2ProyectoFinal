@@ -5,6 +5,15 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import modelo.Opcion;
+import modelo.PersistenciaPregunta;
+import modelo.Pregunta;
+
 /**
  *
  * @author T-101
@@ -16,6 +25,8 @@ public class FormularioPregunta extends javax.swing.JFrame {
      */
     public FormularioPregunta() {
         initComponents();
+        
+       
     }
 
     /**
@@ -33,19 +44,22 @@ public class FormularioPregunta extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtTitulo = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtOpt2 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtOpt3 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        txtOpt = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        txtOpt4 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
 
@@ -62,33 +76,38 @@ public class FormularioPregunta extends javax.swing.JFrame {
 
         jLabel2.setText("Titulo de la pregunta:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtTitulo.setColumns(20);
+        txtTitulo.setLineWrap(true);
+        txtTitulo.setRows(5);
+        jScrollPane1.setViewportView(txtTitulo);
 
         jLabel3.setText("Opcion Correcta:");
 
-        jTextArea2.setColumns(8);
-        jTextArea2.setRows(2);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtOpt2.setColumns(8);
+        txtOpt2.setRows(2);
+        jScrollPane2.setViewportView(txtOpt2);
 
         jLabel4.setText("Opciones Incorrectas:");
 
-        jTextArea3.setColumns(8);
-        jTextArea3.setRows(2);
-        jScrollPane3.setViewportView(jTextArea3);
+        txtOpt3.setColumns(8);
+        txtOpt3.setRows(2);
+        jScrollPane3.setViewportView(txtOpt3);
 
-        jTextArea4.setColumns(8);
-        jTextArea4.setRows(2);
-        jScrollPane4.setViewportView(jTextArea4);
+        txtOpt.setColumns(8);
+        txtOpt.setRows(2);
+        jScrollPane4.setViewportView(txtOpt);
 
-        jTextArea5.setColumns(8);
-        jTextArea5.setRows(2);
-        jScrollPane5.setViewportView(jTextArea5);
+        txtOpt4.setColumns(8);
+        txtOpt4.setRows(2);
+        jScrollPane5.setViewportView(txtOpt4);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton1.setText("Guardar pregunta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -140,15 +159,45 @@ public class FormularioPregunta extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Nueva Pregunta", jPanel2);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Titulo de la pregunta", "Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable1);
+
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 721, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Buscar Pregunta", jPanel3);
@@ -215,6 +264,74 @@ public class FormularioPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //PEDIMOS A LOS CAMPOS LOS VALORES PARA VER LAS PREGUNTAS
+        String titulo=txtTitulo.getText();
+        String op1=txtOpt.getText();
+        String op2=txtOpt2.getText();
+        String op3=txtOpt3.getText();
+        String op4=txtOpt4.getText();
+        
+        //CONSTRUIMOS CADA OPCION
+        Opcion o1= new Opcion(op1,true);
+        Opcion o2= new Opcion(op2,true);
+        Opcion o3= new Opcion(op3,true);
+        Opcion o4= new Opcion(op4,true);
+        
+        ArrayList opciones=new ArrayList<>();
+        opciones.add(o1);
+        opciones.add(o2);
+        opciones.add(o3);
+        opciones.add(o4);
+        
+        
+        //LAS AGREGAMOS A UN ARRAY LIST Y A LA PREGUNTA
+        Pregunta p=new Pregunta(titulo,opciones);
+        
+        try {
+            //AHORA SI GUARDAMOS LA PREGUNTA
+            PersistenciaPregunta.guardar(p);
+            txtOpt.setText(null);
+            txtOpt2.setText(null);
+            txtOpt3.setText(null);
+            txtOpt4.setText(null);
+            txtTitulo.setText(null);
+            
+            JOptionPane.showConfirmDialog(this, "pregunta guardada");
+            
+        } catch (Exception ex) {
+            JOptionPane.showConfirmDialog(this, ex.getMessage());
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [PersistenciaPregunta.leer().size()][4],
+                    new String [] {
+                        "Titulo de la pregunta", "Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"
+                    }
+            ));
+            //LAS DEPOSITAMOS
+            int i=0;
+            for(Pregunta p: PersistenciaPregunta.leer()){
+                jTable1.setValueAt(p.getTitulo(), i,0);
+                jTable1.setValueAt(p.getOpciones().get(0).getTitulo(),i,1);
+                jTable1.setValueAt(p.getOpciones().get(1).getTitulo(),i,2);
+                jTable1.setValueAt(p.getOpciones().get(2).getTitulo(),i,3);
+                jTable1.setValueAt(p.getOpciones().get(3).getTitulo(),i,4);
+                i++;          
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FormularioPregunta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -252,6 +369,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -266,11 +384,13 @@ public class FormularioPregunta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea txtOpt;
+    private javax.swing.JTextArea txtOpt2;
+    private javax.swing.JTextArea txtOpt3;
+    private javax.swing.JTextArea txtOpt4;
+    private javax.swing.JTextArea txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

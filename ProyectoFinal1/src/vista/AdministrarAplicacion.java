@@ -92,7 +92,7 @@ public class AdministrarAplicacion extends javax.swing.JFrame {
                         .addGap(157, 157, 157)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
+                        .addGap(136, 136, 136)
                         .addComponent(EtiquetaError)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
