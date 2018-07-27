@@ -275,9 +275,9 @@ public class FormularioPregunta extends javax.swing.JFrame {
         
         //CONSTRUIMOS CADA OPCION
         Opcion o1= new Opcion(op1,true);
-        Opcion o2= new Opcion(op2,true);
-        Opcion o3= new Opcion(op3,true);
-        Opcion o4= new Opcion(op4,true);
+        Opcion o2= new Opcion(op2,false);
+        Opcion o3= new Opcion(op3,false);
+        Opcion o4= new Opcion(op4,false);
         
         ArrayList opciones=new ArrayList<>();
         opciones.add(o1);
