@@ -5,18 +5,71 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.Opcion;
+import modelo.PersistenciaPregunta;
+import modelo.Pregunta;
+
 /**
  *
  * @author T-101
  */
 public class TestAplicacion extends javax.swing.JFrame {
 
+    int numero=0;
     /**
      * Creates new form TestAplicacion
      */
-    public TestAplicacion() {
+    public TestAplicacion() { //CONSTRUCTOR
         initComponents();
         setLocationRelativeTo(this);
+        setSize(500, 500);
+        mostrarPregunta(numero++);
+        Thread t1=new Thread(new Runnable(){
+            @Override
+            public void run(){
+                while(true){
+                    tiempo++;
+                    try{
+                        Thread.sleep(1000);
+                        etiquetaTiempo.setText(" "+tiempo);
+                        if(tiempo>=30)mostrarPregunta(numero++);
+                        
+                    } catch(InterruptedException ex){
+                }
+                        
+                });
+                t1.start();
+        
+            }
+    //OTRO METODO
+    public void mostrarPregunta(int numero){
+        tiempo=0;
+        
+        try {
+            //PRIMERO SACAMOS LA PREGUNTA DEL NUMERO DADO
+            ArrayList<Pregunta> preguntas=PersistenciaPregunta.leer();
+            Pregunta p=preguntas.get(numero);
+            
+            //AJUSTAMOS VALORES
+            //PRIMERO EL TITULO
+            etiquetaPregunta.setText(p.getTitulo());
+            //AHORA LAS OPCIONES
+            ArrayList<Opcion> opciones=p.getOpciones();
+            //APLICAMOS EL ALGORITMO
+                opciones=PersistenciaPregunta.opcionesAleatorias(opciones);
+            rb1.setText(opciones().get(0).getTitulo());
+            rb2.setText(opciones().get(1).getTitulo());
+            rb3.setText(opciones().get(2).getTitulo());
+            rb4.setText(opciones().get(3).getTitulo());
+            
+        } catch (Exception ex) {
+            
+        }
+        
+        
     }
 
     /**
@@ -28,32 +81,60 @@ public class TestAplicacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
+        etiquetaTiempo = new javax.swing.JLabel();
+        etiquetaPregunta = new javax.swing.JLabel();
+        rb1 = new javax.swing.JRadioButton();
+        rb2 = new javax.swing.JRadioButton();
+        rb3 = new javax.swing.JRadioButton();
+        rb4 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("CONTESTAR TEST");
+        getContentPane().add(jLabel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(242, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(267, Short.MAX_VALUE))
-        );
+        etiquetaTiempo.setText("Tiempo");
+        getContentPane().add(etiquetaTiempo);
+
+        etiquetaPregunta.setText("Aqui va la pregunta");
+        getContentPane().add(etiquetaPregunta);
+
+        buttonGroup1.add(rb1);
+        rb1.setText("jRadioButton1");
+        getContentPane().add(rb1);
+
+        buttonGroup1.add(rb2);
+        rb2.setText("jRadioButton2");
+        getContentPane().add(rb2);
+
+        buttonGroup1.add(rb3);
+        rb3.setText("jRadioButton3");
+        getContentPane().add(rb3);
+
+        buttonGroup1.add(rb4);
+        rb4.setText("jRadioButton4");
+        getContentPane().add(rb4);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        mostrarPregunta(numero++);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,6 +172,14 @@ public class TestAplicacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel etiquetaPregunta;
+    private javax.swing.JLabel etiquetaTiempo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JRadioButton rb1;
+    private javax.swing.JRadioButton rb2;
+    private javax.swing.JRadioButton rb3;
+    private javax.swing.JRadioButton rb4;
     // End of variables declaration//GEN-END:variables
 }
