@@ -17,8 +17,9 @@ import modelo.Pregunta;
  * @author T-101
  */
 public class TestAplicacion extends javax.swing.JFrame {
-
+    
     int numero=0;
+    int tiempo=0;
     /**
      * Creates new form TestAplicacion
      */
@@ -26,22 +27,22 @@ public class TestAplicacion extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         setSize(500, 500);
-        mostrarPregunta(numero++);
-        Thread t1=new Thread(new Runnable(){
+        mostrarPregunta(numero++); 
+        Thread t1=new Thread(new Runnable() {
             @Override
-            public void run(){
-                while(true){
-                    tiempo++;
-                    try{
-                        Thread.sleep(1000);
-                        etiquetaTiempo.setText(" "+tiempo);
-                        if(tiempo>=30)mostrarPregunta(numero++);
-                        
-                    } catch(InterruptedException ex){
-                }
-                        
-                });
-                t1.start();
+            public void run() {
+        while(true){
+            tiempo++;
+            try {
+                Thread.sleep(1000);
+                etiquetaTiempo.setText(""+tiempo);
+                if(tiempo>=30)mostrarPregunta(numero++);
+            } catch (InterruptedException ex) {
+            }
+        }
+            }
+        });
+        t1.start();
         
             }
     //OTRO METODO
@@ -59,11 +60,11 @@ public class TestAplicacion extends javax.swing.JFrame {
             //AHORA LAS OPCIONES
             ArrayList<Opcion> opciones=p.getOpciones();
             //APLICAMOS EL ALGORITMO
-                opciones=PersistenciaPregunta.opcionesAleatorias(opciones);
-            rb1.setText(opciones().get(0).getTitulo());
-            rb2.setText(opciones().get(1).getTitulo());
-            rb3.setText(opciones().get(2).getTitulo());
-            rb4.setText(opciones().get(3).getTitulo());
+            opciones=PersistenciaPregunta.opcionesAleatorias(opciones);
+            rb1.setText(opciones.get(0).getTitulo());
+            rb2.setText(opciones.get(1).getTitulo());
+            rb3.setText(opciones.get(2).getTitulo());
+            rb4.setText(opciones.get(3).getTitulo());
             
         } catch (Exception ex) {
             

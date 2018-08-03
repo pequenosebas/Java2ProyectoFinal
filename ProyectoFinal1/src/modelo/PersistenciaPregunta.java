@@ -11,12 +11,16 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Random;
+import java.util.Set;
 
 /**
  *
  * @author T-101
  */
 public class PersistenciaPregunta {
+    //PRIMERO GUARDAMOS
     
       public static void guardar(Pregunta p)throws Exception{
       //Paso 1 generar el archivo donde se va a guardar
@@ -24,7 +28,9 @@ public class PersistenciaPregunta {
       ArrayList<Pregunta> preguntas=new ArrayList<>();
       File file=new File("cuestionario.yo"); //SE CREA EL ARCHIVO DENTRO DE LA CARPETA DEL PROYECTO DE NB PROYECTS
       
-      if(file.exists())preguntas= leer();
+      if(file.exists()){
+      preguntas =leer();
+      }
       preguntas.add(p);
       
      //Paso 2 es indicar que lo vamos a generar para escribir en el
@@ -47,4 +53,22 @@ public class PersistenciaPregunta {
     }
    
         
+    public static ArrayList<Opcion> opcionesAleatorias(ArrayList<Opcion> opciones) {
+      
+            ArrayList<Opcion> opcionesAleatorias=new ArrayList<>();
+            
+            Set<Integer> enteros=new LinkedHashSet<>();
+          
+      
+        while(enteros.size()<4){
+            Random r=new Random();
+            int valor=r.nextInt(4);
+            enteros.add(valor);
+        }
+        for(Integer i: enteros){
+            opcionesAleatorias.add(opciones.get(i));
+        }
+     return opcionesAleatorias;
+    }
+    
 }

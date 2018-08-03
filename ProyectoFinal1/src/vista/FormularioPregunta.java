@@ -26,7 +26,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
     public FormularioPregunta() {
         initComponents();
         
-       
+        setLocationRelativeTo(this);
     }
 
     /**
