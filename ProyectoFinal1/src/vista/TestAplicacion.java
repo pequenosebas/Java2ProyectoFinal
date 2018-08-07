@@ -26,7 +26,7 @@ public class TestAplicacion extends javax.swing.JFrame {
     public TestAplicacion() { //CONSTRUCTOR
         initComponents();
         setLocationRelativeTo(this);
-        setSize(500, 500);
+        setSize(400, 400);
         mostrarPregunta(numero++); 
         Thread t1=new Thread(new Runnable() {
             @Override
@@ -121,7 +121,7 @@ public class TestAplicacion extends javax.swing.JFrame {
         rb4.setText("jRadioButton4");
         getContentPane().add(rb4);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("SIGUIENTE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
