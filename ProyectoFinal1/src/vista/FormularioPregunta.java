@@ -524,6 +524,28 @@ public class FormularioPregunta extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            jTable2.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [PersistenciaPregunta.leer().size()][4],
+                    new String [] {
+                        "Titulo de la pregunta", "Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"
+                    }
+            ));
+            //LAS DEPOSITAMOS
+            int i=0;
+            for(Pregunta p: PersistenciaPregunta.leer()){
+                jTable2.setValueAt(p.getTitulo(), i,0);
+                jTable2.setValueAt(p.getOpciones().get(0).getTitulo(),i,1);
+                jTable2.setValueAt(p.getOpciones().get(1).getTitulo(),i,2);
+                jTable2.setValueAt(p.getOpciones().get(2).getTitulo(),i,3);
+                jTable2.setValueAt(p.getOpciones().get(3).getTitulo(),i,4);
+                i++;          
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FormularioPregunta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
