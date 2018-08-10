@@ -13,7 +13,7 @@ public class ValidarUsuario {
     
     public static void autenticar(Usuario u) throws UsuarioNoValidoException{
         
-        if(!(u.getLogin().equals("juan")&&u.getPass().equals("1234"))) throw new UsuarioNoValidoException();
+        if(!(u.getLogin().equals("sebas")&&u.getPass().equals("12345"))) throw new UsuarioNoValidoException();
     }
        
 }

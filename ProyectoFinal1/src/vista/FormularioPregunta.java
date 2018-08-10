@@ -63,7 +63,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        txtBuscLista = new javax.swing.JButton();
+        bttnBuscLista = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         txtTitulo1 = new javax.swing.JTextArea();
@@ -77,7 +77,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
         txtOpt6 = new javax.swing.JTextArea();
         jScrollPane11 = new javax.swing.JScrollPane();
         txtOpt7 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
+        bttnAct = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -175,7 +175,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(jButton1)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Nueva Pregunta", jPanel2);
@@ -217,7 +217,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -234,10 +234,10 @@ public class FormularioPregunta extends javax.swing.JFrame {
             }
         });
 
-        txtBuscLista.setText("Buscar Pregunta");
-        txtBuscLista.addActionListener(new java.awt.event.ActionListener() {
+        bttnBuscLista.setText("Buscar Pregunta");
+        bttnBuscLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscListaActionPerformed(evt);
+                bttnBuscListaActionPerformed(evt);
             }
         });
 
@@ -268,10 +268,10 @@ public class FormularioPregunta extends javax.swing.JFrame {
         txtOpt7.setRows(2);
         jScrollPane11.setViewportView(txtOpt7);
 
-        jButton3.setText("ACTUALIZAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bttnAct.setText("ACTUALIZAR");
+        bttnAct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bttnActActionPerformed(evt);
             }
         });
 
@@ -289,7 +289,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBuscLista)
+                                    .addComponent(bttnBuscLista)
                                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel7)
@@ -303,7 +303,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(318, 318, 318)
-                        .addComponent(jButton3)))
+                        .addComponent(bttnAct)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -312,7 +312,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addGap(4, 4, 4)
-                .addComponent(txtBuscLista)
+                .addComponent(bttnBuscLista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
@@ -331,8 +331,8 @@ public class FormularioPregunta extends javax.swing.JFrame {
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(bttnAct)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Actualizar Pregunta", jPanel4);
@@ -381,7 +381,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Borrar Pregunta", jPanel5);
@@ -399,10 +399,10 @@ public class FormularioPregunta extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -413,9 +413,7 @@ public class FormularioPregunta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -493,34 +491,65 @@ public class FormularioPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:  
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void txtBuscListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscListaActionPerformed
+    private void bttnBuscListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnBuscListaActionPerformed
         // TODO add your handling code here:
-         try {            
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object [PersistenciaPregunta.leer().size()][4],
-                    new String [] {
-                        "Titulo de la pregunta", "Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"
-                    }
-            ));
-            //LAS DEPOSITAMOS
-            int i=0;
-            for(Pregunta p: PersistenciaPregunta.leer()){
-                //jTable1.setValueAt(p.getTitulo(), i,0);
-                jTable1.setValueAt(p.getOpciones().get(0).getTitulo(),i,1);
-                jTable1.setValueAt(p.getOpciones().get(1).getTitulo(),i,2);
-                jTable1.setValueAt(p.getOpciones().get(2).getTitulo(),i,3);
-                jTable1.setValueAt(p.getOpciones().get(3).getTitulo(),i,4);
-                i++;          
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
-            
+        });
+        
+        int x=0;
+        try {
+            for(Pregunta P: PersistenciaPregunta.leer()){
+                //jComboBox1.toString(p.getTitulo(),x,0);
+            }
         } catch (Exception ex) {
             Logger.getLogger(FormularioPregunta.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_txtBuscListaActionPerformed
+    }//GEN-LAST:event_bttnBuscListaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void bttnActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnActActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        String titulo=txtTitulo.getText();
+        String op1=txtOpt.getText();
+        String op2=txtOpt2.getText();
+        String op3=txtOpt3.getText();
+        String op4=txtOpt4.getText();
+        
+        //CONSTRUIMOS CADA OPCION
+        Opcion o1= new Opcion(op1,true);
+        Opcion o2= new Opcion(op2,false);
+        Opcion o3= new Opcion(op3,false);
+        Opcion o4= new Opcion(op4,false);
+        
+        ArrayList opciones=new ArrayList<>();
+        opciones.add(o1);
+        opciones.add(o2);
+        opciones.add(o3);
+        opciones.add(o4);
+        
+        
+        //LAS AGREGAMOS A UN ARRAY LIST Y A LA PREGUNTA
+        Pregunta p=new Pregunta(titulo,opciones);
+        
+        try {
+            //AHORA SI GUARDAMOS LA PREGUNTA
+            PersistenciaPregunta.guardar(p);
+            txtOpt.setText(null);
+            txtOpt2.setText(null);
+            txtOpt3.setText(null);
+            txtOpt4.setText(null);
+            txtTitulo.setText(null);
+            
+            JOptionPane.showConfirmDialog(this, "pregunta guardada");
+            
+        } catch (Exception ex) {
+            JOptionPane.showConfirmDialog(this, ex.getMessage());
+        }
+        
+    }//GEN-LAST:event_bttnActActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -584,9 +613,10 @@ public class FormularioPregunta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bttnAct;
+    private javax.swing.JButton bttnBuscLista;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -618,7 +648,6 @@ public class FormularioPregunta extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JButton txtBuscLista;
     private javax.swing.JTextArea txtOpt;
     private javax.swing.JTextArea txtOpt1;
     private javax.swing.JTextArea txtOpt2;
